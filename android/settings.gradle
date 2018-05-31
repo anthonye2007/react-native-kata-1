@@ -1,0 +1,3 @@
+rootProject.name = 'kata'
+
+include ':app'
