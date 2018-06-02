@@ -1,7 +1,7 @@
 import 'react-native';
 
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { render } from 'enzyme';
 import App from '../App';
 
 describe('Test setup', () => {
@@ -12,7 +12,12 @@ describe('Test setup', () => {
 
 describe('Recipe List', () => {
   it('should contain Biscuits and Gravy', () => {
-    let dom = render(<App />);
-    expect(dom.text()).toContain('Biscuits and Gravy');
+    let component = render(<App />);
+    expect(component.text()).toContain('Biscuits and Gravy');
+  });
+
+  it('should contain Tacos', () => {
+    let component = render(<App />);
+    expect(component.text()).toContain('Tacos');
   });
 });
