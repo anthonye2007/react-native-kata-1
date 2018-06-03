@@ -6,22 +6,17 @@
 
 import React, { Component } from 'react';
 import {
-  Text,
-  View
+  FlatList, Text
 } from 'react-native';
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View testID="recipeList">
-        <Text>
-          Biscuits and Gravy
-        </Text>
-        <Text>
-          Tacos
-        </Text>
-      </View>
+      <FlatList testID="recipeList">
+        data={[{title: "Biscuits and Gravy"}, {title: "Tacos"}]}
+        renderItem={({item}) => <Text> title={item.title} </Text> }
+      </FlatList>
     );
   }
 }
