@@ -13,10 +13,10 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <FlatList testID="recipeList">
-        data={[{title: "Biscuits and Gravy"}, {title: "Tacos"}]}
-        renderItem={({item}) => <Text> title={item.title} </Text> }
-      </FlatList>
+      <FlatList testID="recipeList"
+        data={[{title: 'Biscuits and Gravy'}, {title: 'Tacos'}]}
+        renderItem={({item}) => <Text>{item.title}</Text>}
+      />
     );
   }
 }
