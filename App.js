@@ -32,13 +32,19 @@ class HomeScreen extends React.Component {
 }
 
 class IngredientsScreen extends React.Component {
+  biscuitsAndGravyIngredients = [{key: 'Biscuits'}, {key: 'Gravy'}];
+  tacoIngredients = [{key: 'Beef'}, {key: 'Tortilla'}];
+
+  getIngredients(recipeName) {
+    return this.biscuitsAndGravyIngredients ? recipeName === 'Biscuits and Gravy' : this.tacoIngredients;
+  }
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text testID='ingredients'>Ingredients</Text>
         <Text>{this.props.navigation.getParam('recipeName')}</Text>
         <FlatList testID='ingredientList'
-                  data={[{key: 'Biscuits'}, {key: 'Gravy'}]}
+                  data={this.getIngredients(this.props.navigation.getParam('recipeName'))}
                   renderItem={ ({item}) =>
                     <Text>{item.key}</Text>
                   }

@@ -18,9 +18,9 @@ describe('List', () => {
     await expect(element(by.text("Gravy"))).toBeVisible();
   });
 
-  // it('should show the ingredients for Tacos', async () => {
-  //   await element(by.text('Tacos')).tap();
-  //   await expect(element(by.text("Beef"))).toBeVisible();
-  //   await expect(element(by.text("Tortilla"))).toBeVisible();
-  // });
+  it('should show the ingredients for Tacos', async () => {
+    await element(by.text('Tacos')).tap();
+    await expect(element(by.text("Beef"))).toBeVisible();
+    await expect(element(by.text("Tortilla"))).toBeVisible();
+  });
 });
