@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import {
-  View, FlatList, Text, Button, TouchableHighlight, Alert
+  View, FlatList, Text, TouchableHighlight
 } from 'react-native';
 import {createStackNavigator} from 'react-navigation';
 
@@ -18,27 +18,22 @@ class HomeScreen extends React.Component {
                   data={[{key: 'Biscuits and Gravy'}, {key: 'Tacos'}]}
                   renderItem={({item}) =>
                     <TouchableHighlight
-                      onPress={() => Alert.alert('Pressed ' + item.key ) }
+                      onPress={() => this.props.navigation.navigate('Ingredients') }
                     >
                       <Text>{item.key}</Text>
                     </TouchableHighlight>
                   }
-        />
-
-        <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Details')}
         />
       </View>
     );
   }
 }
 
-class DetailsScreen extends React.Component {
+class IngredientsScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
+        <Text testID='ingredients'>Ingredients</Text>
       </View>
     );
   }
@@ -46,7 +41,7 @@ class DetailsScreen extends React.Component {
 
 const RootStack = createStackNavigator({
   Home: HomeScreen,
-  Details: DetailsScreen,
+  Ingredients: IngredientsScreen
 },
   {
     initialRouteName: 'Home'
