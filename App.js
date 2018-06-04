@@ -34,6 +34,8 @@ class IngredientsScreen extends React.Component {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text testID='ingredients'>Ingredients</Text>
+        <Text>Biscuits</Text>
+        <Text>Gravy</Text>
       </View>
     );
   }
