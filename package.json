@@ -36,6 +36,9 @@
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/e2e/"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-native|react-navigation|react-native-safe-area-view)/)"
     ]
   },
   "detox": {
