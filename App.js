@@ -18,7 +18,7 @@ class HomeScreen extends React.Component {
                   data={[{key: 'Biscuits and Gravy'}, {key: 'Tacos'}]}
                   renderItem={({item}) =>
                     <TouchableHighlight
-                      onPress={() => Alert.alert('Touched') }
+                      onPress={() => Alert.alert('Pressed ' + item.key ) }
                     >
                       <Text>{item.key}</Text>
                     </TouchableHighlight>
