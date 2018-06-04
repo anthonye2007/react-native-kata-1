@@ -34,8 +34,12 @@ class IngredientsScreen extends React.Component {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text testID='ingredients'>Ingredients</Text>
-        <Text>Biscuits</Text>
-        <Text>Gravy</Text>
+        <FlatList testID='ingredientList'
+                  data={[{key: 'Biscuits'}, {key: 'Gravy'}]}
+                  renderItem={ ({item}) =>
+                    <Text>{item.key}</Text>
+                  }
+        />
       </View>
     );
   }
