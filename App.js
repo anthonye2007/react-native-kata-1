@@ -18,7 +18,9 @@ class HomeScreen extends React.Component {
                   data={[{key: 'Biscuits and Gravy'}, {key: 'Tacos'}]}
                   renderItem={({item}) =>
                     <TouchableHighlight
-                      onPress={() => this.props.navigation.navigate('Ingredients') }
+                      onPress={() =>
+                        this.props.navigation.navigate('Ingredients', {'recipeName': item.key })
+                      }
                     >
                       <Text>{item.key}</Text>
                     </TouchableHighlight>
@@ -34,6 +36,7 @@ class IngredientsScreen extends React.Component {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text testID='ingredients'>Ingredients</Text>
+        <Text>{this.props.navigation.getParam('recipeName')}</Text>
         <FlatList testID='ingredientList'
                   data={[{key: 'Biscuits'}, {key: 'Gravy'}]}
                   renderItem={ ({item}) =>
