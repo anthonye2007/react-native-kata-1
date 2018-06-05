@@ -31,12 +31,13 @@ class HomeScreen extends React.Component {
   }
 }
 
-class IngredientsScreen extends React.Component {
-  biscuitsAndGravyIngredients = [{key: 'Biscuits'}, {key: 'Gravy'}];
-  tacoIngredients = [{key: 'Beef'}, {key: 'Tortilla'}];
+export class IngredientsScreen extends React.Component {
 
   getIngredients(recipeName) {
-    return this.biscuitsAndGravyIngredients ? recipeName === 'Biscuits and Gravy' : this.tacoIngredients;
+    const biscuitsAndGravyIngredients = [{key: 'Biscuits'}, {key: 'Gravy'}];
+    // const tacoIngredients = [{key: 'Beef'}, {key: 'Tortilla'}];
+    return biscuitsAndGravyIngredients;
+    // return recipeName === 'Biscuits and Gravy' ? this.biscuitsAndGravyIngredients : this.tacoIngredients;
   }
   render() {
     return (
