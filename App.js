@@ -1,14 +1,9 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   View, FlatList, Text, TouchableHighlight
 } from 'react-native';
 import {createStackNavigator} from 'react-navigation';
+import Recipe from './Recipe'
 
 class HomeScreen extends React.Component {
   render() {
@@ -29,10 +24,6 @@ class HomeScreen extends React.Component {
       </View>
     );
   }
-}
-
-function Recipe(props) {
-  return <Text>{props.recipeName}</Text>;
 }
 
 export class IngredientsScreen extends React.Component {
