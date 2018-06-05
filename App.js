@@ -1,30 +1,9 @@
 import React, { Component } from 'react';
 import {
-  View, FlatList, Text, TouchableHighlight
+  View, FlatList, Text
 } from 'react-native';
 import {createStackNavigator} from 'react-navigation';
-import Recipe from './Recipe'
-
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <FlatList testID="recipeList"
-                  data={[{key: 'Biscuits and Gravy'}, {key: 'Tacos'}]}
-                  renderItem={({item}) =>
-                    <TouchableHighlight
-                      onPress={() =>
-                        this.props.navigation.navigate('Ingredients', {'recipeName': item.key })
-                      }
-                    >
-                      <Recipe recipeName={item.key} />
-                    </TouchableHighlight>
-                  }
-        />
-      </View>
-    );
-  }
-}
+import Home from './Home';
 
 export class IngredientsScreen extends React.Component {
 
@@ -50,7 +29,7 @@ export class IngredientsScreen extends React.Component {
 }
 
 const RootStack = createStackNavigator({
-  Home: HomeScreen,
+  Home: Home,
   Ingredients: IngredientsScreen
 },
   {
