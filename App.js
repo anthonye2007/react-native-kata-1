@@ -35,9 +35,8 @@ export class IngredientsScreen extends React.Component {
 
   getIngredients(recipeName) {
     const biscuitsAndGravyIngredients = [{key: 'Biscuits'}, {key: 'Gravy'}];
-    // const tacoIngredients = [{key: 'Beef'}, {key: 'Tortilla'}];
-    return biscuitsAndGravyIngredients;
-    // return recipeName === 'Biscuits and Gravy' ? this.biscuitsAndGravyIngredients : this.tacoIngredients;
+    const tacoIngredients = [{key: 'Beef'}];
+    return recipeName === 'Biscuits and Gravy' ? biscuitsAndGravyIngredients : tacoIngredients;
   }
   render() {
     return (

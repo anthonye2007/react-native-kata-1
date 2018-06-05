@@ -22,21 +22,35 @@ describe('Recipe List', () => {
   });
 });
 
-function findIngredient(ingredients) {
+function findIngredient(ingredients, ingredient) {
   let foundIngredient = false;
-  ingredients.forEach((ingredient) => {
-    if (ingredient.key === 'Biscuits') {
+  ingredients.forEach((x) => {
+    if (x.key === ingredient) {
       foundIngredient = true
     }
   });
   return foundIngredient;
 }
 
-describe('Ingredients', () => {
-  it('should return biscuits for Biscuits and Gravy', () => {
+fdescribe('Ingredients', () => {
+  it('should return Biscuits for Biscuits and Gravy', () => {
     const sut = new IngredientsScreen();
     const ingredients = sut.getIngredients('Biscuits and Gravy');
-    let foundIngredient = findIngredient(ingredients);
+    let foundIngredient = findIngredient(ingredients, 'Biscuits');
+    expect(foundIngredient).toBe(true)
+  });
+
+  it('should return Gravy for Biscuits and Gravy', () => {
+    const sut = new IngredientsScreen();
+    const ingredients = sut.getIngredients('Biscuits and Gravy');
+    let foundIngredient = findIngredient(ingredients, 'Gravy');
+    expect(foundIngredient).toBe(true)
+  });
+
+  it('should return Beef for Tacos', () => {
+    const sut = new IngredientsScreen();
+    const ingredients = sut.getIngredients('Tacos');
+    let foundIngredient = findIngredient(ingredients, 'Beef');
     expect(foundIngredient).toBe(true)
   });
 });
