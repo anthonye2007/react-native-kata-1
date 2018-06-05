@@ -4,12 +4,6 @@ import React from 'react';
 import { render } from 'enzyme';
 import App, {IngredientsScreen} from '../App';
 
-describe('Test setup', () => {
-  it('should realize true is true', () => {
-    expect(true).toBe(true);
-  });
-});
-
 describe('Recipe List', () => {
   it('should contain Biscuits and Gravy', () => {
     let component = render(<App />);

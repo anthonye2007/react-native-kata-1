@@ -22,13 +22,17 @@ class HomeScreen extends React.Component {
                         this.props.navigation.navigate('Ingredients', {'recipeName': item.key })
                       }
                     >
-                      <Text>{item.key}</Text>
+                      <Recipe recipeName={item.key} />
                     </TouchableHighlight>
                   }
         />
       </View>
     );
   }
+}
+
+function Recipe(props) {
+  return <Text>{props.recipeName}</Text>;
 }
 
 export class IngredientsScreen extends React.Component {
