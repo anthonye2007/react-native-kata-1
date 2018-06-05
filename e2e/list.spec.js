@@ -23,8 +23,4 @@ describe('List', () => {
     await expect(element(by.text("Beef"))).toBeVisible();
     await expect(element(by.text("Tortilla"))).toBeVisible();
   });
-
-  it('should show the average rating for Biscuits and Gravy', async () => {
-    await expect(element(by.id('recipe-rating-1'))).toBeVisible();
-  });
 });
