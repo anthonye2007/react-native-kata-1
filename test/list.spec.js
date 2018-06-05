@@ -2,7 +2,8 @@ import 'react-native';
 
 import React from 'react';
 import { render } from 'enzyme';
-import App, {IngredientsScreen} from '../App';
+import App from '../App';
+import IngredientsScreen from '../IngredientsScreen';
 
 describe('Recipe List', () => {
   it('should contain Biscuits and Gravy', () => {
