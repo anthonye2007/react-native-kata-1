@@ -5,12 +5,10 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "e2e": "detox test",
+    "e2e": "detox build && detox test",
     "ios": "react-native run-ios --simulator='iPhone 8'"
   },
   "dependencies": {
-    "detox": "^7.3.7",
-    "mocha": "^5.2.0",
     "react": "16.3.1",
     "react-native": "0.55.4",
     "react-navigation": "^2.0.4"
@@ -26,7 +24,9 @@
     "jest-serializer-enzyme": "^1.0.0",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.4.0",
-    "react-test-renderer": "16.3.1"
+    "react-test-renderer": "16.3.1",
+    "detox": "^7.3.7",
+    "mocha": "^5.2.0"
   },
   "jest": {
     "preset": "react-native",
