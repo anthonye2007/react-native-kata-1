@@ -33,6 +33,7 @@ function findIngredient(ingredients, ingredient) {
 }
 
 fdescribe('Ingredients', () => {
+
   it('should return Biscuits for Biscuits and Gravy', () => {
     const sut = new IngredientsScreen();
     const ingredients = sut.getIngredients('Biscuits and Gravy');
@@ -51,6 +52,13 @@ fdescribe('Ingredients', () => {
     const sut = new IngredientsScreen();
     const ingredients = sut.getIngredients('Tacos');
     let foundIngredient = findIngredient(ingredients, 'Beef');
+    expect(foundIngredient).toBe(true)
+  });
+
+  it('should return Tortilla for Tacos', () => {
+    const sut = new IngredientsScreen();
+    const ingredients = sut.getIngredients('Tacos');
+    let foundIngredient = findIngredient(ingredients, 'Tortilla');
     expect(foundIngredient).toBe(true)
   });
 });
