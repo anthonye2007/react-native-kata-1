@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
+    "test": "jest ./test",
+    "smoke": "jest ./smoke-tests",
     "e2e": "detox build && detox test",
-    "ios": "react-native run-ios --simulator='iPhone 8'"
+    "ios": "react-native run-ios --simulator='iPhone 8'",
+    "all-tests": "yarn run test && yarn run smoke && yarn run e2e"
   },
   "dependencies": {
     "react": "16.3.1",
