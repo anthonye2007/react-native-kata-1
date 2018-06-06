@@ -8,7 +8,8 @@
     "smoke": "jest ./smoke-tests",
     "e2e": "detox build && detox test",
     "ios": "react-native run-ios --simulator='iPhone 8'",
-    "all-tests": "yarn run test && yarn run smoke && yarn run e2e"
+    "all-tests": "yarn run test && yarn run smoke && yarn run e2e",
+    "watch": "nodemon"
   },
   "dependencies": {
     "react": "16.3.1",
@@ -19,16 +20,17 @@
     "babel-core": "^6.0.0",
     "babel-jest": "^23.0.1",
     "babel-preset-react-native": "^4.0.0",
+    "detox": "^7.3.7",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.0.0",
     "jest": "23.1.0",
     "jest-serializer-enzyme": "^1.0.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.17.5",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.4.0",
-    "react-test-renderer": "16.3.1",
-    "detox": "^7.3.7",
-    "mocha": "^5.2.0"
+    "react-test-renderer": "16.3.1"
   },
   "jest": {
     "preset": "react-native",
