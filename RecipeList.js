@@ -5,7 +5,7 @@ import Recipe from './Recipe';
 export default class RecipeList extends React.Component {
   transformRecipes(recipes) {
     return recipes.map(recipe => {
-      return { key: recipe.name, rating: 5 };
+      return { key: recipe.name, rating: recipe.rating };
     });
   }
 
@@ -18,7 +18,7 @@ export default class RecipeList extends React.Component {
                            this.props.navigation.navigate('Ingredients', {'recipeName': item.key})
                          }
                        >
-                         <Recipe recipeName={item.key} rating={5}/>
+                         <Recipe recipeName={item.key} rating={item.rating}/>
                        </TouchableHighlight>
                      }
     />;

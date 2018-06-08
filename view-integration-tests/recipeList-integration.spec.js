@@ -13,4 +13,9 @@ describe('RecipeList', () => {
     let recipeList = render(<RecipeList recipes={[{ name: 'My recipe', rating: 5 }]}/>);
     expect(recipeList.text()).toContain("5 stars");
   });
+
+  it('should show different ratings', () => {
+    let recipeList = render(<RecipeList recipes={[{ name: 'My recipe', rating: 2 }]}/>);
+    expect(recipeList.text()).toContain("2 stars");
+  });
 });

@@ -10,7 +10,7 @@ export default class HomeScreen extends React.Component {
         <RecipeList navigation={this.props.navigation} recipes={
           [
             {name: 'Biscuits and Gravy', rating: 5},
-            {name: 'Tacos', rating: 5}
+            {name: 'Tacos', rating: 3}
           ]
         }/>
       </View>
