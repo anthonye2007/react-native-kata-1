@@ -4,8 +4,13 @@ import RecipeList from '../RecipeList';
 
 describe('RecipeList', () => {
   it('should show the text of multiple items', () => {
-    let wrapper = render(<RecipeList recipes={['My recipe', 'Other favorite']}/>);
-    expect(wrapper.text()).toContain('My recipe');
-    expect(wrapper.text()).toContain('Other favorite');
+    let recipeList = render(<RecipeList recipes={['My recipe', 'Other favorite']}/>);
+    expect(recipeList.text()).toContain('My recipe');
+    expect(recipeList.text()).toContain('Other favorite');
+  });
+
+  it('should show the recipe rating', () => {
+    let recipeList = render(<RecipeList recipes={[{ name: 'My recipe', rating: 5 }]}/>);
+    expect(recipeList.text()).toContain("5 stars")
   });
 });

@@ -8,6 +8,7 @@ export default class IngredientsScreen extends React.Component {
     const tacoIngredients = [{key: 'Beef'}, {key: 'Tortilla'}];
     return recipeName === 'Biscuits and Gravy' ? biscuitsAndGravyIngredients : tacoIngredients;
   }
+
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>

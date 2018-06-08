@@ -1,10 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import RecipeList from '../RecipeList';
 
-describe('Recipe list', () => {
-  it('should have a list', () => {
-    let wrapper = shallow(<RecipeList recipes={['test']}/>);
-    expect(wrapper.exists()).toBe(true);
+describe('transformRecipes', () => {
+  it('should return an object with key pointing to name', () => {
+    let original = [{ name: 'My recipe', rating: 5 }];
+    let recipeList = new RecipeList();
+    let data = recipeList.transformRecipes(original);
+    expect(data[0]).toEqual({key: 'My recipe', rating: 5});
   });
 });
