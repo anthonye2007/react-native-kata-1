@@ -13,9 +13,9 @@ export default class IngredientsScreen extends React.Component {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text testID='ingredients'>Ingredients</Text>
-        <Text>{this.props.navigation.getParam('recipeName')}</Text>
+        <Text>{this.props.recipeName}</Text>
         <FlatList testID='ingredientList'
-                  data={this.getIngredients(this.props.navigation.getParam('recipeName'))}
+                  data={this.getIngredients(this.props.recipeName)}
                   renderItem={ ({item}) =>
                     <Text>{item.key}</Text>
                   }
