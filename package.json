@@ -6,10 +6,10 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest ./test",
     "smoke": "jest ./smoke-tests",
-    "e2e": "detox build && detox test",
+    "e2e": "yarn run smoke && detox build && detox test",
     "ios": "react-native run-ios --simulator='iPhone 8'",
-    "all-tests": "yarn run test && yarn run smoke && yarn run e2e",
-    "watch": "nodemon"
+    "all-tests": "yarn run test && yarn run e2e",
+    "watch": "nodemon -x yarn test"
   },
   "dependencies": {
     "react": "16.3.1",
