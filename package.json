@@ -9,7 +9,8 @@
     "e2e": "yarn run smoke && detox build && detox test",
     "ios": "react-native run-ios --simulator='iPhone 8'",
     "all-tests": "yarn run test && yarn run e2e",
-    "watch": "nodemon -x yarn test"
+    "watch": "nodemon -x yarn test",
+    "integration": "jest ./view-integration-tests"
   },
   "dependencies": {
     "react": "16.3.1",
