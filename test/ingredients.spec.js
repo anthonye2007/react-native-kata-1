@@ -49,4 +49,13 @@ describe('Ingredients', () => {
     let ingredients = ingredientsScreen.findAllByProps({testID:'ingredient'});
     expect(ingredients.length).toEqual(0);
   });
+
+  describe('getIngredients', () => {
+    it('should return an item with a key', () => {
+      let screen = new IngredientsScreen();
+      let recipe = { key: 'Tacos', rating: 5, ingredients: ['Beef'] };
+      let ingredients = screen.getIngredients(recipe);
+      expect(ingredients).toEqual([{key: 'Beef'}]);
+    });
+  });
 });

@@ -3,9 +3,10 @@ import {FlatList, Text, View} from 'react-native';
 
 export default class IngredientsScreen extends React.Component {
 
-  getIngredients() {
-    let recipe = this.props.navigation.getParam('recipe');
-    return recipe.ingredients;
+  getIngredients(recipe) {
+    return recipe.ingredients.map(ingredient => {
+      return { key: ingredient };
+    });
   }
 
   render() {
@@ -13,9 +14,9 @@ export default class IngredientsScreen extends React.Component {
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Ingredients:</Text>
         <FlatList testID='ingredientList'
-                  data={this.getIngredients()}
+                  data={this.getIngredients(this.props.navigation.getParam('recipe'))}
                   renderItem={ ({item}) =>
-                    <Text testID='ingredient'>{item}</Text>
+                    <Text testID='ingredient'>{item.key}</Text>
                   }
         />
       </View>
