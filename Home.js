@@ -1,6 +1,5 @@
 import React from 'react';
-import {FlatList, TouchableHighlight, View} from 'react-native';
-import Recipe from './Recipe';
+import {View} from 'react-native';
 import RecipeList from './RecipeList';
 
 export default class HomeScreen extends React.Component {
@@ -8,8 +7,8 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <RecipeList navigation={this.props.navigation} recipes={[
-            {name: 'Biscuits and Gravy', rating: 5, ingredients: ['Gravy']},
-            {name: 'Tacos', rating: 3}
+            {name: 'Biscuits and Gravy', rating: 5, ingredients: ['Gravy', 'Biscuits']},
+            {name: 'Tacos', rating: 3, ingredients: ['Beef', 'Tortilla']}
           ]}
         />
       </View>

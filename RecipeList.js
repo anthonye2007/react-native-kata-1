@@ -5,7 +5,7 @@ import Recipe from './Recipe';
 export default class RecipeList extends React.Component {
   transformRecipes(recipes) {
     return recipes.map(recipe => {
-      return { key: recipe.name, rating: recipe.rating };
+      return { key: recipe.name, rating: recipe.rating , ingredients: recipe.ingredients };
     });
   }
 
