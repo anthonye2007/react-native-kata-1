@@ -24,7 +24,6 @@
     "detox": "^7.3.7",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^4.0.0",
     "jest": "23.1.0",
     "jest-serializer-enzyme": "^1.0.0",
     "mocha": "^5.2.0",
