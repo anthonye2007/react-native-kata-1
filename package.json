@@ -25,6 +25,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "23.1.0",
+    "jest-fetch-mock": "^1.6.3",
     "jest-serializer-enzyme": "^1.0.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.17.5",
@@ -35,6 +36,7 @@
   },
   "jest": {
     "preset": "react-native",
+    "automock": false,
     "setupFiles": [
       "./test/jestSetup.js"
     ],
