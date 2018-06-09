@@ -2,7 +2,8 @@ import 'react-native';
 import React from 'react';
 import IngredientsScreen from '../IngredientsScreen';
 import {hasText} from '../view-integration-tests/test-renderer-helpers';
-import TestRenderer from 'react-test-renderer';
+// noinspection ES6CheckImport
+import {create} from 'react-test-renderer';
 
 describe('Ingredients', () => {
   it('should show ingredient name', () => {
@@ -12,7 +13,7 @@ describe('Ingredients', () => {
         return str === 'recipe' ? recipe : undefined;
       }
     };
-    let renderer = TestRenderer.create(
+    let renderer = create(
       <IngredientsScreen navigation={fakeNavigation}/>
     );
     let testInstance = renderer.root;
@@ -26,11 +27,11 @@ describe('Ingredients', () => {
         return str === 'recipe' ? recipe : undefined;
       }
     };
-    let renderer = TestRenderer.create(
+    let renderer = create(
       <IngredientsScreen navigation={fakeNavigation}/>
     );
     let ingredientsScreen = renderer.root;
-    let ingredients = ingredientsScreen.findAllByProps({testID:'ingredient'});
+    let ingredients = ingredientsScreen.findAll(node => node.type === 'Text' && node.props.testID === 'ingredient');
     expect(ingredients.length).toEqual(2);
   });
 
@@ -41,7 +42,7 @@ describe('Ingredients', () => {
         return str === 'recipe' ? recipe : undefined;
       }
     };
-    let renderer = TestRenderer.create(
+    let renderer = create(
       <IngredientsScreen navigation={fakeNavigation}/>
     );
     let ingredientsScreen = renderer.root;
