@@ -7,22 +7,20 @@ export default class HomeScreen extends React.Component {
     super(props);
     this.state = {
       recipes: [
-        {name: 'Biscuits and Gravy', rating: 5, ingredients: ['Gravy', 'Biscuits']},
-        {name: 'Tacos', rating: 3, ingredients: ['Beef', 'Tortilla']}
+        // {name: 'Biscuits and Gravy', rating: 5, ingredients: ['Gravy', 'Biscuits']},
+        // {name: 'Tacos', rating: 3, ingredients: ['Beef', 'Tortilla']}
       ]
     };
   }
 
-  // componentWillMount() {
-  //   console.log('HomeScreen loaded');
-  //   fetch('https://www.google.com').then((response) => {
-  //     console.log('got response!');
-  //     console.log(response);
-  //   }).catch((error) => {
-  //     console.error('response failed');
-  //     console.error(error);
-  //   })
-  // }
+  componentWillMount() {
+    fetch('https://www.myawesomeserver.com').then((response) => {
+      console.log('got response!');
+      // this.state = response.data;
+    }).catch((error) => {
+      console.error('response failed');
+    })
+  }
 
 
 
