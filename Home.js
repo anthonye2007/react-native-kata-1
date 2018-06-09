@@ -14,15 +14,17 @@ export default class HomeScreen extends React.Component {
   }
 
   componentWillMount() {
-    fetch('https://www.myawesomeserver.com').then((response) => {
+    fetch('https://www.google.com').then((response) => response.json())
+      .then((responseJson) => {
       console.log('got response!');
-      // this.state = response.data;
+      this.state.recipes = responseJson;
+      // this.setState({
+      //   recipes: responseJson
+      // });
     }).catch((error) => {
       console.error('response failed');
     })
   }
-
-
 
   render() {
     return (
