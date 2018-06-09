@@ -15,7 +15,7 @@ export default class RecipeList extends React.Component {
                      renderItem={({item}) =>
                        <TouchableHighlight
                          onPress={() =>
-                           this.props.navigation.navigate('Ingredients', {'recipeName': item.key})
+                           this.props.navigation.navigate('Ingredients', {'recipe': item})
                          }
                        >
                          <Recipe recipeName={item.key} rating={item.rating}/>
