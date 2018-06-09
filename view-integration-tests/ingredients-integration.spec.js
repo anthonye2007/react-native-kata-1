@@ -11,4 +11,11 @@ describe('Ingredients', () => {
     let testInstance = renderer.root;
     expect(hasText(testInstance, "Beef")).toBeTruthy();
   });
+
+  it('should show different ingredient for the recipe', () => {
+    let ingredientList = ["Salsa"];
+    let renderer = TestRenderer.create(<IngredientsScreen recipeName="Tacos" ingredients={ingredientList}/>);
+    let testInstance = renderer.root;
+    expect(hasText(testInstance, "Salsa")).toBeTruthy();
+  });
 });
